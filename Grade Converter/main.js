@@ -36,6 +36,11 @@ let gradeInput = document.createElement("input");
     container.appendChild(gradeInput);
 
 let gradeFinal = document.createElement("p");
+    gradeFinal.style.fontWeight = "bold";
+    gradeFinal.style.fontSize = "24px";
+    gradeFinal.style.minHeight="30px";
+    gradeFinal.style.margin= "5px";
+    gradeFinal.textContent = " ";
     container.appendChild(gradeFinal);
 
 let warningText = document.createElement("p");
@@ -44,6 +49,7 @@ let warningText = document.createElement("p");
     warningText.style.marginTop = "5px";
     warningText.style.minHeight = "30px"; //this is great to not move the btn of its location.
     warningText.style.margin = "5px";
+    warningText.textContent = " ";
     container.appendChild(warningText);
 
 let gradeBtnConverter = document.createElement("button");
@@ -59,6 +65,7 @@ function MarkToGrade (){
     gradeFinal.textContent = "";
     warningText.textContent = "";
     gradeFinal.style.color = "black";
+ 
 
 try{ //using exception handling (try-catch)
 
