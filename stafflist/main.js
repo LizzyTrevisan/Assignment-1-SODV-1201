@@ -28,14 +28,14 @@ sortBySalaryBtn.className = "sortBtn";
 sortBySalaryBtn.textContent = "Sort by Salary";
 
 sortBySalaryBtn.addEventListener("click", function () {
-  // Correção aqui: salary é número, não precisa localeCompare
+ 
   let sortedSalary = [...staffData].sort((a, b) => a.salary - b.salary);
   displayStaff(sortedSalary);
 });
 
 document.body.appendChild(sortBySalaryBtn);
 
-// Função para exibir a lista
+
 function displayStaff(list) {
   staffList.innerHTML = "";
 
@@ -62,7 +62,7 @@ staffData = lines.map(line => {
   let parts = line.split(',');
 
   if (parts.length < 6) {
-    console.warn('Linha inválida ignorada:', line);
+    console.warn('Line is not valid:', line);
     return null;
   }
 
