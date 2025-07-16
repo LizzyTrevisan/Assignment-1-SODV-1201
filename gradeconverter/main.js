@@ -1,126 +1,148 @@
 /*
 * @Author: Leiziane Trevisan Dardin
 * @StudentID: 459656
-* @Date: optional
-* @Description: I have been using ChatGpt only as a guide to clarify doubts and add new functionalities I have seen or don't remember.
-OpenAI. (2025). ChatGPT (June 2025 version). https://chat.openai.com/
+* @Description: I used ChatGPT only as a guide to refresh JS and clarify doubts.
 */
 
-const title = "Grade Calculator";
-let calculator = document.createElement("h1");
-calculator.textContent = title;
-calculator.style.textAlign = "center";
-calculator.style.fontSize = "40px";
-calculator.style.fontFamily= "Arial";
-calculator.style.color ="#004D40";
-document.body.appendChild(calculator);
+//// -------------------- NAVIGATION --------------------
+const nav = document.createElement("nav");
+nav.id = "nav";
 
-let container = document.createElement("div");
-    container.style.textAlign = "center";
-    container.style.display = "flex";
-    container.style.flexDirection = "column";
-    container.style.alignItems = "center";
-    container.style.gap = "10px";
-    container.style.marginTop = "30px";
-    document.body.appendChild(container);
+const navLinks = document.createElement("div");
+navLinks.className = "nav-links";
 
-let gradeInput = document.createElement("input");
-    gradeInput.placeholder = "Enter your grade";
-    gradeInput.style.fontSize = "20px"
-    gradeInput.style.textAlign = "center";
-    gradeInput.style.position = "center";
-    gradeInput.style.borderRadius="3px";
-    gradeInput.style.margin = "30px";
-    gradeInput.style.padding ="5px";
-    gradeInput.style.boxShadow = "0 0 5px rgb(143, 127, 127)";
-    container.appendChild(gradeInput);
+const linkProfile = document.createElement("a");
+linkProfile.href = '../profilepage/index.html';
+linkProfile.textContent = "Profile";
 
-let gradeFinal = document.createElement("p");
-    gradeFinal.style.fontWeight = "bold";
-    gradeFinal.style.fontSize = "24px";
-    gradeFinal.style.minHeight="30px";
-    gradeFinal.style.margin= "5px";
-    gradeFinal.textContent = " ";
-    container.appendChild(gradeFinal);
+const linkGradeConverter = document.createElement("a");
+linkGradeConverter.href = '../gradeconverter/index.html';
+linkGradeConverter.textContent = "Grade Converter";
 
-let warningText = document.createElement("p");
-    warningText.style.color = "red";
-    warningText.style.fontSize= "20px";
-    warningText.style.marginTop = "5px";
-    warningText.style.minHeight = "30px"; //this is great to not move the btn of its location.
-    warningText.style.margin = "5px";
-    warningText.textContent = " ";
-    container.appendChild(warningText);
+const linkStaffPage = document.createElement("a");
+linkStaffPage.href = '../stafflist/index.html';
+linkStaffPage.textContent = "Staff List";
 
-let gradeBtnConverter = document.createElement("button");
-    gradeBtnConverter.style.padding = "5px";
-    gradeBtnConverter.style.borderRadius = "7.5px";
-    gradeBtnConverter.style.boxShadow = "0 0 10px rgba(0, 77, 64, 0.5)";
-    gradeBtnConverter.style.marginTop = "5px";
-    gradeBtnConverter.textContent = "Calculate";
-    container.appendChild(gradeBtnConverter);
+const linkTemperatureConverter = document.createElement("a");
+linkTemperatureConverter.href = '../temperatureconverter/index.html';
+linkTemperatureConverter.textContent = "Temperature Converter";
 
-function MarkToGrade (){
+navLinks.appendChild(linkProfile);
+navLinks.appendChild(linkGradeConverter);
+navLinks.appendChild(linkStaffPage);
+navLinks.appendChild(linkTemperatureConverter);
 
-    gradeFinal.textContent = "";
-    warningText.textContent = "";
-    gradeFinal.style.color = "black";
- 
+nav.appendChild(navLinks);
+document.getElementById("navbar-container").appendChild(nav);
 
-try{ //using exception handling (try-catch)
+//// -------------------- GRADE CALCULATOR --------------------
 
-        let gradeValue = parseInt(gradeInput.value);
+const main = document.querySelector("main");
 
-        //starting with an empty placeholder
-        if(gradeInput.value.trimEnd() === ""){
-            warningText.textContent = "Please enter a grade!";
-            return;
-        }
+// Title
+const title = document.createElement("h1");
+title.textContent = "Grade Calculator";
+title.style.textAlign = "center";
+title.style.fontSize = "40px";
+title.style.fontFamily = "Arial";
+title.style.color = "#004D40";
+main.appendChild(title);
 
-        //validating is just numbers entered
-        if(isNaN(gradeValue)){
-            warningText.textContent = "Please enter a valid grade!";
-            warningText.style.color= "#D404040";
-            return;
-        }
-        
-        //validating there is no negative numbers or above 100
-        if (gradeValue < 0 || gradeValue > 100) {
-            warningText.textContent = "Grade cannot be less than 0 or more than 100";
-            gradeFinal.style.color = "red";
-            return;
-        }
+// Container
+const container = document.createElement("div");
+container.style.display = "flex";
+container.style.flexDirection = "column";
+container.style.alignItems = "center";
+container.style.gap = "10px";
+container.style.marginTop = "30px";
+main.appendChild(container);
 
-        //Validating the Grades according to the table provided
-        if(gradeValue >= 90) {
-            gradeFinal.textContent = 'A';
-            return;
-        } else if (gradeValue >=80 && gradeValue < 90){
-            gradeFinal.textContent = 'B';
-            return;
-        } else if (gradeValue >=70 && gradeValue < 80){
-            gradeFinal.textContent = 'C';
-            return;
-        } else if (gradeValue >=60 && gradeValue < 70){
-            gradeFinal.textContent = 'D';
-            return;
-        } else if (gradeValue >=50 && gradeValue < 60 ){
-            gradeFinal.textContent = 'E';
-            return;
-        } else {
-            gradeFinal.textContent = "Failed";
-            gradeFinal.style.color = "red";
-            return;
-        }
-    } catch (error){
-            warningText.textContent = "Error!"
+// Input
+const gradeInput = document.createElement("input");
+gradeInput.placeholder = "Enter your grade";
+gradeInput.type = "number";
+gradeInput.style.fontSize = "20px";
+gradeInput.style.textAlign = "center";
+gradeInput.style.borderRadius = "3px";
+gradeInput.style.margin = "30px";
+gradeInput.style.padding = "5px";
+gradeInput.style.boxShadow = "0 0 5px rgb(143, 127, 127)";
+container.appendChild(gradeInput);
+
+// Final grade display
+const gradeFinal = document.createElement("p");
+gradeFinal.className = "grade-result";
+gradeFinal.style.minHeight = "30px";
+gradeFinal.style.margin = "5px";
+gradeFinal.textContent = " ";
+container.appendChild(gradeFinal);
+
+// Warning text
+const warningText = document.createElement("p");
+warningText.className = "warning-text";
+warningText.textContent = " ";
+container.appendChild(warningText);
+
+// Button
+const gradeBtnConverter = document.createElement("button");
+gradeBtnConverter.className = "grade-btn";
+gradeBtnConverter.textContent = "Calculate";
+container.appendChild(gradeBtnConverter);
+
+// Function
+function MarkToGrade() {
+  gradeFinal.textContent = "";
+  warningText.textContent = "";
+  gradeFinal.style.color = "black";
+
+  try {
+    let gradeValue = parseInt(gradeInput.value);
+
+    if (gradeInput.value.trim() === "") {
+      warningText.textContent = "Please enter a grade!";
+      return;
     }
+
+    if (isNaN(gradeValue)) {
+      warningText.textContent = "Please enter a valid grade!";
+      return;
+    }
+
+    if (gradeValue < 0 || gradeValue > 100) {
+      warningText.textContent = "Grade cannot be less than 0 or more than 100";
+      gradeFinal.style.color = "red";
+      return;
+    }
+
+    if (gradeValue >= 90) {
+      gradeFinal.textContent = "A";
+      gradeFinal.style.color = "green";
+    } else if (gradeValue >= 80) {
+      gradeFinal.textContent = "B";
+      gradeFinal.style.color = "green";
+    } else if (gradeValue >= 70) {
+      gradeFinal.textContent = "C";
+      gradeFinal.style.color = "orange";
+    } else if (gradeValue >= 60) {
+      gradeFinal.textContent = "D";
+      gradeFinal.style.color = "orange";
+    } else if (gradeValue >= 50) {
+      gradeFinal.textContent = "E";
+      gradeFinal.style.color = "orangered";
+    } else {
+      gradeFinal.textContent = "Failed";
+      gradeFinal.style.color = "red";
+    }
+
+  } catch (error) {
+    warningText.textContent = "Error!";
+  }
 }
 
-//to use Enter key from keyboard and accept the value entered instead of clicking the btn
+// Events
 gradeBtnConverter.addEventListener("click", MarkToGrade);
-document.addEventListener("keydown", function(event){
-    if(event.key === "Enter"){
-        MarkToGrade();
-    }
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    MarkToGrade();
+  }
 });

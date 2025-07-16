@@ -1,43 +1,72 @@
-
 /*
 * @Author: Leiziane Trevisan Dardin
 * @StudentID: 459656
-* @Date: optional
-* @Description: I have been using ChatGpt only as a guide to clarify doubts and add new functionalities I have seen or don't remember. I also had learnt how to use querySelector using main.
-OpenAI. (2025). ChatGPT (June 2025 version). https://chat.openai.com/
+* @Description: I used Chatgpt to support in css style and functionalities like the picture appearing
 */
 
-//1. task = Create a personal profile page with any kind of style
 
-//Picture appears after 10 secs
+const nav = document.createElement("nav");
+nav.id = "nav";
 
-let picture= document.createElement("img");
-    picture.src="./images/image.png";
-    picture.style.width = "300px";
+const navLinks = document.createElement("div");
+navLinks.className = "nav-links";
+
+const linkProfile = document.createElement("a");
+linkProfile.href = '../profilepage/index.html';
+linkProfile.textContent = "Profile";
+
+const linkGradeConverter = document.createElement("a");
+linkGradeConverter.href = '../gradeconverter/index.html';
+linkGradeConverter.textContent = "Grade Converter";
+
+const linkStaffPage = document.createElement("a");
+linkStaffPage.href = '../stafflist/index.html';
+linkStaffPage.textContent = "Staff List";
+
+const linkTemperatureConverter = document.createElement("a");
+linkTemperatureConverter.href = '../temperatureconverter/index.html';
+linkTemperatureConverter.textContent = "Temperature Converter";
+
+navLinks.appendChild(linkProfile);
+navLinks.appendChild(linkGradeConverter);
+navLinks.appendChild(linkStaffPage);
+navLinks.appendChild(linkTemperatureConverter);
+
+nav.appendChild(navLinks);
+document.getElementById("navbar-container").appendChild(nav);
+
+//// -------------------- PROFILE CONTENT --------------------
+
+const main = document.querySelector("main");
+
+// Title
+const title = document.createElement("h1");
+title.textContent = "My Profile";
+title.className = "page-title";
+main.appendChild(title);
 
 
-let main = document.querySelector("main");
+const profileContainer = document.createElement("div");
+profileContainer.className = "profile-container";
+main.appendChild(profileContainer);
+
+
+const profileImg = document.createElement("img");
+profileImg.src = "./images/image.png";
+profileImg.className = "profile-img";
 
 setTimeout(() => {
-    main.appendChild(picture);
-    }, 10000);
+  profileContainer.appendChild(profileImg);
+}, 10000);
 
 
-//Paragraphs with text
+const paragraph1 = document.createElement("p");
+paragraph1.textContent = "Hello, my name is Leiziane but you can call me Lizzy!";
+paragraph1.className = "intro-text";
 
-let paragraph1= document.createElement("p");
-    paragraph1.textContent = "Hello, my name is Leiziane but you can call me Lizzy!";
+const paragraph2 = document.createElement("p");
+paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now.";
+paragraph2.className = "intro-text";
 
-
-let paragraph2 = document.createElement("p");
-    paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now";
-
-
-    main.appendChild(paragraph1);
-    main.appendChild(paragraph2);
-
-
-
-
-
-
+profileContainer.appendChild(paragraph1);
+profileContainer.appendChild(paragraph2);

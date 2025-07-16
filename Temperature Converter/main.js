@@ -2,32 +2,31 @@
 * @Author: Leiziane Trevisan Dardin
 * @StudentID: 459656
 * @Date: optional
-* @Description: I used ChatGpt only as a guide to refresh JS and clarify doubts.
+* @Description: I have been using ChatGpt only as a guide to clarify doubts and add new functionalities.
 OpenAI. (2025). ChatGPT (June 2025 version). https://chat.openai.com/
 */
 
 
-const nav= document.createElement("nav");
+const nav = document.createElement("nav");
 nav.id = "nav";
 
 const navLinks = document.createElement("div");
 navLinks.className = "nav-links";
 
 const linkProfile = document.createElement("a");
-linkProfile.href = '#Profile';
+linkProfile.href = '../profilepage/index.html';
 linkProfile.textContent = "Profile";
 
 const linkGradeConverter = document.createElement("a");
-linkGradeConverter.href="#gradeConverter";
+linkGradeConverter.href = '../gradeconverter/index.html';
 linkGradeConverter.textContent = "Grade Converter";
 
 const linkStaffPage = document.createElement("a");
-linkStaffPage.href = '#staffPage';
-linkStaffPage.textContent="Staff List";
-
+linkStaffPage.href = '../stafflist/index.html';
+linkStaffPage.textContent = "Staff List";
 
 const linkTemperatureConverter = document.createElement("a");
-linkTemperatureConverter.href='#temperatureConverter';
+linkTemperatureConverter.href = '#temperatureconverter';
 linkTemperatureConverter.textContent = "Temperature Converter";
 
 navLinks.appendChild(linkProfile);
