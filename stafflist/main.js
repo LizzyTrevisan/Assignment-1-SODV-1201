@@ -6,12 +6,11 @@
 OpenAI. (2025). ChatGPT (June 2025 version). https://chat.openai.com/
 */
 
-// Cria a lista UL
+
 let staffList = document.createElement("ul");
 staffList.className = "staffListDisplay";
 document.body.appendChild(staffList);
 
-// Botão Sort por Nome
 let sortByNameBtn = document.createElement("button");
 sortByNameBtn.className = "sortBtn";
 sortByNameBtn.textContent = "Sort by Name";
@@ -23,7 +22,7 @@ sortByNameBtn.addEventListener("click", function () {
 
 document.body.appendChild(sortByNameBtn);
 
-// Botão Sort por Salário
+
 let sortBySalaryBtn = document.createElement("button");
 sortBySalaryBtn.className = "sortBtn";
 sortBySalaryBtn.textContent = "Sort by Salary";
@@ -47,16 +46,16 @@ function displayStaff(list) {
   });
 }
 
-// Carrega os dados do staff.txt
+
 let staffData = [];
 
-fetch("staff.txt") // <-- CORREÇÃO: estava escrito "fectch"
+fetch("staff.txt")"
   .then(response => response.text())
   .then(text => {
     let lines = text.trim().split('\n');
 
 staffData = lines.map(line => {
-  // Remove colchetes e aspas
+
   line = line.replace(/[\[\]"]/g, '').trim();
 
   // Divide em partes
@@ -74,7 +73,7 @@ staffData = lines.map(line => {
     name: name,
     salary: parseFloat(salaryStr)
   };
-}).filter(item => item !== null); // Remove nulls do array
+}).filter(item => item !== null); 
 
     displayStaff(staffData);
   })
