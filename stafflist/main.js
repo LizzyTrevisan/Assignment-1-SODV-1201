@@ -27,22 +27,13 @@ let sortBySalaryBtn = document.createElement("button");
 sortBySalaryBtn.className = "sortBtn";
 sortBySalaryBtn.textContent = "Sort by Salary";
 
-<<<<<<< Updated upstream
-sortBySalaryBtn.addEventListener("click", function () {
- 
-=======
 sortBySalaryBtn.addEventListener("click", function (){
->>>>>>> Stashed changes
   let sortedSalary = [...staffData].sort((a, b) => a.salary - b.salary);
   displayStaff(sortedSalary);
 });
 
 document.body.appendChild(sortBySalaryBtn);
 
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 function displayStaff(list) {
   staffList.innerHTML = "";
 
@@ -69,11 +60,9 @@ staffData = lines.map(line => {
   let parts = line.split(',');
 
   if (parts.length < 6) {
-<<<<<<< Updated upstream
-    console.warn('Line is not valid:', line);
-=======
+
     console.warn('Line s not valid:', line);
->>>>>>> Stashed changes
+
     return null;
   }
 
