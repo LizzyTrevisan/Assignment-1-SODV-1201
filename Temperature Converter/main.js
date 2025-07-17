@@ -14,19 +14,19 @@ const navLinks = document.createElement("div");
 navLinks.className = "nav-links";
 
 const linkProfile = document.createElement("a");
-linkProfile.href = '../profilepage/index.html';
+linkProfile.href = '../Profile Page/index.html';
 linkProfile.textContent = "Profile";
 
 const linkGradeConverter = document.createElement("a");
-linkGradeConverter.href = '../gradeconverter/index.html';
+linkGradeConverter.href = '../Grade Converter/index.html';
 linkGradeConverter.textContent = "Grade Converter";
 
 const linkStaffPage = document.createElement("a");
-linkStaffPage.href = '../stafflist/index.html';
+linkStaffPage.href = '../Staff List/index.html';
 linkStaffPage.textContent = "Staff List";
 
 const linkTemperatureConverter = document.createElement("a");
-linkTemperatureConverter.href = '#temperatureconverter';
+linkTemperatureConverter.href = '#Temperature Converter';
 linkTemperatureConverter.textContent = "Temperature Converter";
 
 navLinks.appendChild(linkProfile);

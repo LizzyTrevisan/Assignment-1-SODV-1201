@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #2a5298;
 }
 
 html, body {
@@ -15,7 +16,6 @@ body {
   background-color: white;
 }
 
-/* Header & Footer */
 header, footer {
   background: linear-gradient(to bottom, rgba(30, 60, 114, 0.3), #2a5298);
   color: white;
@@ -24,7 +24,6 @@ header, footer {
   font-size: smaller;
 }
 
-/* Navbar */
 nav {
   position: sticky;
   top: 0;
@@ -34,7 +33,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background-color: #2a5298; /* Fixa cor de fundo ao rolar */
 }
 
 #navbar-container {
@@ -45,48 +43,72 @@ nav {
   display: flex;
   gap: 25px;
   align-items: center;
-  margin-left: auto; /* alinha os links à direita */
+  margin: auto;
 }
 
 .nav-links a {
   text-decoration: none;
   color: white;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  color: #2a5298;
 }
 
-/* Main */
 main {
   flex: 1;
   padding: 20px;
-  text-align: center;
   background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Título */
-main h1 {
-  text-align: center;
-  font-size: 40px;
-  color: #004D40;
-  margin-top: 40px;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 20px;
 }
 
-/* Imagem */
-main img {
-  transition: opacity 0.5s ease;
-  margin-top: 20px;
+.staffListDisplay {
+  width: 550px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  width: 300px;
 }
 
-/* Texto */
-.intro-text {
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row; /* <-- botão lado a lado */
+  justify-content: center;
+  gap: 15px;
   margin-top: 20px;
-  font-size: 18px;
-  color: #333;
+}
+
+.sortBtn {
+  width: 130px;
+  padding: 10px;
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  background-color: white;
+  color: #3b4b69;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sortBtn:hover {
+  background-color: rgb(212, 225, 225);
 }

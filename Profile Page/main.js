@@ -12,19 +12,19 @@ const navLinks = document.createElement("div");
 navLinks.className = "nav-links";
 
 const linkProfile = document.createElement("a");
-linkProfile.href = '../profilepage/index.html';
+linkProfile.href = '#Profile Page';
 linkProfile.textContent = "Profile";
 
 const linkGradeConverter = document.createElement("a");
-linkGradeConverter.href = '../gradeconverter/index.html';
+linkGradeConverter.href = '../Grade Converter/index.html';
 linkGradeConverter.textContent = "Grade Converter";
 
 const linkStaffPage = document.createElement("a");
-linkStaffPage.href = '../stafflist/index.html';
+linkStaffPage.href = '../Staff List/index.html';
 linkStaffPage.textContent = "Staff List";
 
 const linkTemperatureConverter = document.createElement("a");
-linkTemperatureConverter.href = '../temperatureconverter/index.html';
+linkTemperatureConverter.href = '../Temperature Converter/index.html';
 linkTemperatureConverter.textContent = "Temperature Converter";
 
 navLinks.appendChild(linkProfile);
@@ -65,7 +65,7 @@ paragraph1.textContent = "Hello, my name is Leiziane but you can call me Lizzy!"
 paragraph1.className = "intro-text";
 
 const paragraph2 = document.createElement("p");
-paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now.";
+paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now.Currently I am a Software Development student at Bow Valley.";
 paragraph2.className = "intro-text";
 
 profileContainer.appendChild(paragraph1);
