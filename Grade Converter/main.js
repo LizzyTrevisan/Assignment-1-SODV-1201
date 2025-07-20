@@ -146,3 +146,13 @@ document.addEventListener("keydown", (event) => {
     MarkToGrade();
   }
 });
+
+
+const footer = document.querySelector("footer");
+
+const footerText = document.createElement("p");
+footerText.innerHTML = `&copy; ${new Date().getFullYear()} Leiziane Trevisan Dardin. All rights reserved.`;
+
+footer.appendChild(footerText);      
+
+

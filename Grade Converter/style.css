@@ -4,14 +4,21 @@
   box-sizing: border-box;
 
 }
-html, body{
-       height: 100%;
+html, body {
+  height: 100%;
 }
+
 body {
- display: flex;
- flex-direction: column;
-  font-family: 'Roboto', sans-serif;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
 }
 
 header, footer{
@@ -89,12 +96,6 @@ input::placeholder {
   color: white;
 }
 
-.btnsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
 
 
 #results, .grade-result {
@@ -109,4 +110,8 @@ input::placeholder {
   font-size: 18px;
   min-height: 30px;
   margin-top: 10px;
+}
+footer p {
+  margin-top: 10px;
+  text-align: center;
 }

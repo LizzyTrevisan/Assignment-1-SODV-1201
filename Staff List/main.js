@@ -1,12 +1,10 @@
 /*
 * @Author: Leiziane Trevisan Dardin
 * @StudentID: 459656
-* @Date: optional
-* @Description: I have been using ChatGpt only as a guide to clarify doubts and add new functionalities I have seen or don't remember.
-OpenAI. (2025). ChatGPT (June 2025 version). https://chat.openai.com/
+* @Description: I have been using ChatGPT only as a guide to clarify doubts and add new functionalities.
 */
 
-// NAVBAR
+// Nav Bar
 const nav = document.createElement("nav");
 nav.id = "nav";
 
@@ -33,6 +31,7 @@ navLinks.append(linkProfile, linkGradeConverter, linkStaffPage, linkTemperatureC
 nav.appendChild(navLinks);
 document.getElementById("navbar-container").appendChild(nav);
 
+// Content
 const main = document.querySelector("main");
 const contentContainer = document.createElement("div");
 contentContainer.className = "content-container";
@@ -41,15 +40,13 @@ main.appendChild(contentContainer);
 const staffList = document.createElement("ul");
 staffList.className = "staffListDisplay";
 
-
 const buttonsContainer = document.createElement("div");
 buttonsContainer.className = "buttonsContainer";
 
 const sortByNameBtn = document.createElement("button");
 sortByNameBtn.className = "sortBtn";
 sortByNameBtn.textContent = "Sort by Name";
-
-sortByNameBtn.addEventListener("click", function () {
+sortByNameBtn.addEventListener("click", () => {
   const sortedList = [...staffData].sort((a, b) => a.name.localeCompare(b.name));
   displayStaff(sortedList);
 });
@@ -57,8 +54,7 @@ sortByNameBtn.addEventListener("click", function () {
 const sortBySalaryBtn = document.createElement("button");
 sortBySalaryBtn.className = "sortBtn";
 sortBySalaryBtn.textContent = "Sort by Salary";
-
-sortBySalaryBtn.addEventListener("click", function () {
+sortBySalaryBtn.addEventListener("click", () => {
   const sortedList = [...staffData].sort((a, b) => a.salary - b.salary);
   displayStaff(sortedList);
 });
@@ -66,14 +62,12 @@ sortBySalaryBtn.addEventListener("click", function () {
 const clearBtn = document.createElement("button");
 clearBtn.className = "sortBtn";
 clearBtn.textContent = "Clear";
-
-clearBtn.addEventListener("click", function () {
+clearBtn.addEventListener("click", () => {
   staffList.innerHTML = "";
 });
 
 buttonsContainer.append(sortByNameBtn, sortBySalaryBtn, clearBtn);
 contentContainer.append(staffList, buttonsContainer);
-
 
 let staffData = [];
 
@@ -103,7 +97,13 @@ fetch("staff.txt")
       const salaryStr = parts[5].trim().replace('$', '').replace(/,/g, '');
       return { name: name, salary: parseFloat(salaryStr) };
     }).filter(item => item !== null);
-
-  
   })
   .catch(error => console.log("Error loading the list from staff.txt", error));
+
+// Footer
+const footer = document.querySelector("footer");
+if (footer) {
+  const footerText = document.createElement("p");
+  footerText.innerHTML = `&copy; ${new Date().getFullYear()} Leiziane Trevisan Dardin. All rights reserved.`;
+  footer.appendChild(footerText);
+}

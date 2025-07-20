@@ -65,8 +65,15 @@ paragraph1.textContent = "Hello, my name is Leiziane but you can call me Lizzy!"
 paragraph1.className = "intro-text";
 
 const paragraph2 = document.createElement("p");
-paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now.Currently I am a Software Development student at Bow Valley.";
+paragraph2.textContent = "I am originally from Brazil, but I have been living in Canada for almost 12 years now. Currently I am a Software Development student at Bow Valley.";
 paragraph2.className = "intro-text";
 
 profileContainer.appendChild(paragraph1);
 profileContainer.appendChild(paragraph2);
+
+const footer = document.querySelector("footer");
+
+const footerContent = document.createElement("p");
+footer.innerHTML = `&copy; ${new Date().getFullYear()} Leiziane Trevisan Dardin. All rights reserved.`;
+
+footer.appendChild(footerText);

@@ -103,3 +103,11 @@ btnsContainer.appendChild(btnKToCFndC);
 
 main.appendChild(btnsContainer);
 main.appendChild(resultDisplay);
+
+
+const footer = document.querySelector("footer");
+
+const footerText = document.createElement("p");
+footerText.innerHTML = `&copy; ${new Date().getFullYear()} Leiziane Trevisan Dardin. All rights reserved.`;
+
+footer.appendChild(footerText);

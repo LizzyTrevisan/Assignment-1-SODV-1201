@@ -63,9 +63,11 @@ main {
     padding: 20px;
     text-align: center;
     background-color: #f0f0f0;
+  
 }
 
 .profile-img{
+  min-height: 50vh;
   transition: opacity 0.5s ease;
   margin-top: 20px;
   border-radius: 10px;
@@ -74,5 +76,10 @@ main {
 }
 
 .intro-text{
- margin:50px;
+ margin:30px;
+}
+
+footer p {
+  margin-top: 10px;
+  text-align: center;
 }
